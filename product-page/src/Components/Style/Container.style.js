@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 1000px;
+  width: 80%;
   height: 100vh;
   max-width: 100%;
-  padding: 0 20px;
+  padding: 0 0;
   margin: 0 auto;
-  background-color: red;
 `;
