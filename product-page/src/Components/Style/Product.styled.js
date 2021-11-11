@@ -66,6 +66,7 @@ export const ProductInfo = styled.div`
     text-decoration: line-through;
     font-weight: 700;
     letter-spacing: 0.5px;
+    margin-bottom: 42px;
   }
 `;
 
@@ -74,5 +75,83 @@ export const ProductImage = styled.img`
   border-radius: 12px;
   @media (max-width: ${({ theme }) => theme.mobile}) {
     margin: 40px 0 30px;
+  }
+`;
+
+export const AddToCart = styled.div`
+  display: flex;
+  width: 100%;
+  height: 55px;
+  gap: 16px;
+`;
+
+export const Counter = styled.div`
+  display: flex;
+  align-items: center;
+  width: 40%;
+  background: hsl(223, 64%, 98%);
+  border-radius: 8px;
+  font-size: 18px;
+  text-align: center;
+
+  span {
+    width: 33%;
+    text-align: center;
+  }
+
+  .increment,
+  .decrement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: ${({ theme }) => theme.colors.mainColor};
+    cursor: pointer;
+    height: 100%;
+
+    &:hover {
+      background: hsl(220, 14%, 75%);
+      transition: all 0.3s;
+    }
+    &:active {
+      transform: scale(0.75);
+    }
+  }
+  .decrement {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  .increment {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+`;
+
+export const Button = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+  width: 60%;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  background: ${({ theme }) => theme.colors.mainColor};
+  box-shadow: 0 12px 54px -10px #ffa05a;
+
+  &:hover {
+    transition: all 0.3s;
+    background: ${({ theme }) => theme.colors.secondaryColor};
+  }
+
+  &:active {
+    transform: scale(0.75);
+  }
+
+  img {
+    margin-right: 12px;
   }
 `;

@@ -1,6 +1,10 @@
 import React from 'react';
 import { Flex } from './Style/Flex.styled';
+import { Image } from './Style/Header.style';
 import {
+  AddToCart,
+  Button,
+  Counter,
   ProductImage,
   ProductInfo,
   ProductPreview,
@@ -46,6 +50,16 @@ const Product = () => {
           </div>
         </Flex>
         <p className='old-price'>$250.00</p>
+        <AddToCart>
+          <Counter>
+            <span className='decrement'>-</span>
+            <span>0</span>
+            <span className='increment'>+</span>
+          </Counter>
+          <Button>
+            <img src='./images/icon-cart white.svg' /> Add to cart
+          </Button>
+        </AddToCart>
       </ProductInfo>
     </ProductStyled>
   );
