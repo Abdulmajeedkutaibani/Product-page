@@ -1,5 +1,6 @@
 import { ThemeProvider } from 'styled-components';
 import Header from './Components/Header';
+import Product from './Components/Product';
 import { Container } from './Components/Style/Container.style';
 import { GlobalStyles } from './Components/Style/Global';
 
@@ -9,6 +10,7 @@ const theme = {
     secondaryColor: '#ffa05a',
     textColor: '#1e1e26',
     subColor: '#94979e',
+    PaleOrange: 'hsl(25, 100%, 94%)',
   },
   mobile: '768px',
 };
@@ -18,6 +20,7 @@ function App() {
       <GlobalStyles />
       <Container>
         <Header />
+        <Product />
       </Container>
     </ThemeProvider>
   );
