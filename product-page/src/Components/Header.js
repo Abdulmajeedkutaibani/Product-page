@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Flex } from './Style/Flex.styled';
 import {
   HeaderStyled,
@@ -7,9 +8,12 @@ import {
   NavList,
   NavListItem,
   Image,
+  CartCount,
 } from './Style/Header.style';
+import { BsCart3 } from 'react-icons/bs';
 
 const Header = () => {
+  const count = useSelector((state) => state.counter.count);
   return (
     <HeaderStyled>
       <Nav>
@@ -33,8 +37,19 @@ const Header = () => {
         </NavList>
       </Nav>
       <Flex>
-        <Image src='./images/icon-cart.svg' imgWidth='25px' />
-        <Image src='./images/image-avatar.png' imgWidth='52px' />
+        <Flex className='cartComponent'>
+          <BsCart3 className='header-cart-icon' />
+          {count > 0 ? (
+            <CartCount>
+              <span>{count}</span>
+            </CartCount>
+          ) : null}
+        </Flex>
+        <Image
+          src='./images/image-avatar.png'
+          imgWidth='52px'
+          className='avatar'
+        />
       </Flex>
     </HeaderStyled>
   );

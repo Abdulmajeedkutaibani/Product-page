@@ -73,6 +73,7 @@ export const ProductInfo = styled.div`
 export const ProductImage = styled.img`
   width: ${({ width }) => width};
   border-radius: 12px;
+  cursor: pointer;
   @media (max-width: ${({ theme }) => theme.mobile}) {
     margin: 40px 0 30px;
   }
@@ -151,7 +152,10 @@ export const Button = styled.button`
     transform: scale(0.75);
   }
 
-  img {
+  .button-cart-icon {
     margin-right: 12px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: white;
   }
 `;

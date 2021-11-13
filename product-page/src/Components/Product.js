@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { BsCart3 } from 'react-icons/bs';
+import { useDispatch, useSelector } from 'react-redux';
+import { decrement, increment } from '../Redux/Counter';
 import { Flex } from './Style/Flex.styled';
-import { Image } from './Style/Header.style';
 import {
   AddToCart,
   Button,
@@ -12,26 +14,33 @@ import {
 } from './Style/Product.styled';
 
 const Product = () => {
+  const [mainImage, setMainImage] = useState('./images/image-product-1.jpg');
+  const dispatch = useDispatch();
+  const count = useSelector((state) => state.counter.count);
   return (
     <ProductStyled>
       <ProductPreview direction='column' gap='34px'>
-        <ProductImage src='./images/image-product-1.jpg' width='100%' />
+        <ProductImage src={mainImage} width='100%' />
         <Flex>
           <ProductImage
             src='./images/image-product-1-thumbnail.jpg'
             width='20%'
+            onClick={() => setMainImage('./images/image-product-1.jpg')}
           />
           <ProductImage
             src='./images/image-product-2-thumbnail.jpg'
             width='20%'
+            onClick={() => setMainImage('./images/image-product-2.jpg')}
           />
           <ProductImage
             src='./images/image-product-3-thumbnail.jpg'
             width='20%'
+            onClick={() => setMainImage('./images/image-product-3.jpg')}
           />
           <ProductImage
             src='./images/image-product-4-thumbnail.jpg'
             width='20%'
+            onClick={() => setMainImage('./images/image-product-4.jpg')}
           />
         </Flex>
       </ProductPreview>
@@ -52,12 +61,17 @@ const Product = () => {
         <p className='old-price'>$250.00</p>
         <AddToCart>
           <Counter>
-            <span className='decrement'>-</span>
-            <span>0</span>
-            <span className='increment'>+</span>
+            <span className='decrement' onClick={() => dispatch(decrement())}>
+              -
+            </span>
+            <span>{count}</span>
+            <span className='increment' onClick={() => dispatch(increment())}>
+              +
+            </span>
           </Counter>
           <Button>
-            <img src='./images/icon-cart white.svg' /> Add to cart
+            <BsCart3 className='button-cart-icon' />
+            Add to cart
           </Button>
         </AddToCart>
       </ProductInfo>
