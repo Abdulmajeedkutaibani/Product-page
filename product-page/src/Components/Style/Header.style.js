@@ -6,8 +6,9 @@ export const HeaderStyled = styled.header`
   justify-content: space-between;
 
   .cartComponent {
-    cursor: pointer;
+    position: relative;
   }
+
   .header-cart-icon {
     font-size: 25px;
     color: ${({ theme }) => theme.colors.subColor};
@@ -86,4 +87,71 @@ export const CartCount = styled.div`
   font-size: 14px;
   color: white;
   background: ${({ theme }) => theme.colors.mainColor};
+`;
+
+export const Cart = styled.div`
+  background: white;
+  z-index: 30;
+  position: absolute;
+  width: 380px;
+  height: 280px;
+  border-radius: 8px;
+  top: 60px;
+  right: -150px;
+  box-shadow: -0px 50px 50px lightgray;
+
+  .cart-header {
+    border-bottom: 1.5px solid lightgrey;
+    height: 72px;
+    background: white;
+    display: flex;
+    align-items: center;
+    padding-left: 25px;
+
+    span {
+      font-weight: 600;
+    }
+  }
+  .cart-product {
+    padding: 25px;
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    img {
+      width: 50px;
+      border-radius: 6px;
+    }
+    .cart-product-info {
+      .name-section {
+        width: 110%;
+        margin-bottom: 10px;
+        color: ${({ theme }) => theme.colors.subColor};
+      }
+    }
+    .remove-icon {
+      color: lightgray;
+      cursor: pointer;
+      font-size: 19px;
+      &:hover {
+        color: red;
+      }
+    }
+
+    .product-price {
+      .price {
+        color: ${({ theme }) => theme.colors.subColor};
+        margin-right: 10px;
+      }
+      .total {
+        font-weight: 700;
+      }
+    }
+  }
+  button {
+    box-shadow: none;
+    margin-left: 25px;
+    width: 312px;
+  }
 `;

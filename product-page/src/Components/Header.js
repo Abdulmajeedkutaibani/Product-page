@@ -9,8 +9,11 @@ import {
   NavListItem,
   Image,
   CartCount,
+  Cart,
 } from './Style/Header.style';
 import { BsCart3 } from 'react-icons/bs';
+import { FaTrashAlt } from 'react-icons/fa';
+import { Button } from './Style/Product.styled';
 
 const Header = () => {
   const count = useSelector((state) => state.counter.count);
@@ -44,6 +47,27 @@ const Header = () => {
               <span>{count}</span>
             </CartCount>
           ) : null}
+          <Cart className='cart'>
+            <div className='cart-header'>
+              <span>Cart</span>
+            </div>
+            <div className='cart-product'>
+              <img src='./images/image-product-1.jpg' alt='' />
+              <div className='cart-product-info'>
+                <div className='name-section'>
+                  <span className='product-name'>
+                    Fall Limited Edition Sneakers
+                  </span>
+                </div>
+                <div className='product-price'>
+                  <span className='price'>$125.00 x {count}</span>
+                  <span className='total'>${125.0 * count}.00</span>
+                </div>
+              </div>
+              <FaTrashAlt className='remove-icon' />
+            </div>
+            <Button>Checkout</Button>
+          </Cart>
         </Flex>
         <Image
           src='./images/image-avatar.png'
