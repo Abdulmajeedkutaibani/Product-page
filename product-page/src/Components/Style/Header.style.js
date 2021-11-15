@@ -5,6 +5,10 @@ export const HeaderStyled = styled.header`
   display: flex;
   justify-content: space-between;
 
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    border-bottom: none;
+    padding: 0 5%;
+  }
   .cartComponent {
     position: relative;
 
@@ -16,6 +20,9 @@ export const HeaderStyled = styled.header`
   .header-cart-icon {
     font-size: 25px;
     color: ${({ theme }) => theme.colors.subColor};
+    @media (max-width: ${({ theme }) => theme.mobile}) {
+      width: 24px;
+    }
     &:hover {
       color: black;
     }
@@ -32,15 +39,14 @@ export const HeaderStyled = styled.header`
 export const Nav = styled.nav`
   display: flex;
   align-items: center;
-  height: 4cm;
+  height: 138px;
   @media (max-width: ${({ theme }) => theme.mobile}) {
-    flex-direction: column;
+    height: 68px;
   }
 `;
 
 export const Logo = styled.img`
   @media (max-width: ${({ theme }) => theme.mobile}) {
-    margin-bottom: 40px;
   }
 `;
 
@@ -50,6 +56,9 @@ export const NavList = styled.ul`
   height: 100%;
   justify-content: center;
   align-items: center;
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    display: none;
+  }
 `;
 export const NavListItem = styled.li`
   list-style: none;
@@ -73,7 +82,8 @@ export const Image = styled.img`
   width: ${({ imgWidth }) => imgWidth};
   margin-left: 40px;
   @media (max-width: ${({ theme }) => theme.mobile}) {
-    margin: 40px 0 30px;
+    width: 24px;
+    margin-left: 15px;
   }
 `;
 
@@ -103,6 +113,10 @@ export const Cart = styled.div`
   top: 60px;
   right: -150px;
   box-shadow: -0px 50px 50px lightgray;
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    top: 60px;
+    right: -50px;
+  }
 
   .cart-header {
     border-bottom: 1.5px solid lightgrey;

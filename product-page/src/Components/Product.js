@@ -27,7 +27,7 @@ const Product = () => {
           width='100%'
           style={{ cursor: 'default' }}
         />
-        <Flex>
+        <Flex className='product-images'>
           <ProductImage
             src='./images/image-product-1-thumbnail.jpg'
             width='20%'

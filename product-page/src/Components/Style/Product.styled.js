@@ -6,6 +6,18 @@ export const ProductStyled = styled.div`
   width: 90%;
   margin: 100px auto;
   align-items: center;
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    flex-direction: column;
+    margin-top: 0;
+    width: 100%;
+  }
+
+  .product-images {
+    padding: 0 5%;
+    img {
+      border-radius: 12px;
+    }
+  }
 `;
 
 export const ProductPreview = styled.div`
@@ -15,12 +27,19 @@ export const ProductPreview = styled.div`
   align-items: center;
   gap: ${({ gap }) => gap};
   justify-content: space-between;
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    width: 100%;
+  }
 `;
 
 export const ProductInfo = styled.div`
   width: 50%;
   display: flex;
   flex-direction: column;
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    width: 90%;
+    padding-bottom: 100px;
+  }
 
   .company {
     font-size: 12px;
@@ -77,7 +96,8 @@ export const ProductImage = styled.img`
   border-radius: 12px;
   cursor: pointer;
   @media (max-width: ${({ theme }) => theme.mobile}) {
-    margin: 40px 0 30px;
+    max-width: 100%;
+    border-radius: 0;
   }
 `;
 
@@ -86,6 +106,10 @@ export const AddToCart = styled.div`
   width: 100%;
   height: 55px;
   gap: 16px;
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    flex-direction: column;
+    height: 120px;
+  }
 `;
 
 export const Counter = styled.div`
@@ -96,10 +120,16 @@ export const Counter = styled.div`
   border-radius: 8px;
   font-size: 18px;
   text-align: center;
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    width: 100%;
+    height: 55px;
+  }
 
   span {
     width: 33%;
     text-align: center;
+    @media (max-width: ${({ theme }) => theme.mobile}) {
+    }
   }
 
   .increment,
@@ -112,6 +142,9 @@ export const Counter = styled.div`
     color: ${({ theme }) => theme.colors.mainColor};
     cursor: pointer;
     height: 100%;
+    @media (max-width: ${({ theme }) => theme.mobile}) {
+      font-size: 24px;
+    }
 
     &:hover {
       background: hsl(220, 14%, 75%);
@@ -145,6 +178,9 @@ export const Button = styled.button`
   font-weight: 700;
   background: ${({ theme }) => theme.colors.mainColor};
   box-shadow: 0 12px 54px -10px #ffa05a;
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    width: 100%;
+  }
 
   &:hover {
     transition: all 0.3s;

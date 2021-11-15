@@ -7,4 +7,7 @@ export const BackgroundStyled = styled.div`
   opacity: 0.5;
   background: grey;
   left: 0;
+
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+  }
 `;

@@ -6,4 +6,8 @@ export const Container = styled.div`
   max-width: 100%;
   padding: 0 0;
   margin: 0 auto;
+
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    width: 100%;
+  }
 `;
