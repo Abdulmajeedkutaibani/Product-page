@@ -12,7 +12,7 @@ import {
   CartCount,
   Cart,
 } from './Style/Header.style';
-import { IoCartOutline } from 'react-icons/io5';
+import { FaShoppingCart } from 'react-icons/fa';
 import { FaTrashAlt } from 'react-icons/fa';
 import { Button } from './Style/Product.styled';
 import { BackgroundStyled } from './Style/Background.styled';
@@ -54,7 +54,7 @@ const Header = () => {
       </Nav>
       <Flex>
         <Flex className='cartComponent'>
-          <IoCartOutline
+          <FaShoppingCart
             className='header-cart-icon'
             onClick={() => {
               dispatch(openCart());
