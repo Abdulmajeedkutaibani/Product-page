@@ -1,6 +1,7 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Flex } from './Style/Flex.styled';
+import { closeCart, openCart } from '../Redux/Modal';
 import {
   HeaderStyled,
   Logo,
@@ -14,11 +15,23 @@ import {
 import { BsCart3 } from 'react-icons/bs';
 import { FaTrashAlt } from 'react-icons/fa';
 import { Button } from './Style/Product.styled';
+import { BackgroundStyled } from './Style/Background.styled';
+import { decrement } from '../Redux/Counter';
 
 const Header = () => {
+  const [showBackground, setShowBackground] = useState('none');
   const count = useSelector((state) => state.counter.count);
+  const dispatch = useDispatch();
+  const open = useSelector((state) => state.opener.open);
   return (
     <HeaderStyled>
+      <BackgroundStyled
+        onClick={() => {
+          dispatch(closeCart());
+          setShowBackground('none');
+        }}
+        style={{ display: showBackground }}
+      />
       <Nav>
         <Logo src='./images/logo.svg' />
         <NavList>
@@ -41,32 +54,47 @@ const Header = () => {
       </Nav>
       <Flex>
         <Flex className='cartComponent'>
-          <BsCart3 className='header-cart-icon' />
+          <BsCart3
+            className='header-cart-icon'
+            onClick={() => {
+              dispatch(openCart());
+              setShowBackground('block');
+            }}
+          />
           {count > 0 ? (
             <CartCount>
               <span>{count}</span>
             </CartCount>
           ) : null}
-          <Cart className='cart'>
+          <Cart className='cart' style={{ display: open }}>
             <div className='cart-header'>
               <span>Cart</span>
             </div>
-            <div className='cart-product'>
-              <img src='./images/image-product-1.jpg' alt='' />
-              <div className='cart-product-info'>
-                <div className='name-section'>
-                  <span className='product-name'>
-                    Fall Limited Edition Sneakers
-                  </span>
-                </div>
-                <div className='product-price'>
-                  <span className='price'>$125.00 x {count}</span>
-                  <span className='total'>${125.0 * count}.00</span>
-                </div>
+            {count <= 0 ? (
+              <div className='cart-empty'>
+                <span>Your cart is empty.</span>
               </div>
-              <FaTrashAlt className='remove-icon' />
-            </div>
-            <Button>Checkout</Button>
+            ) : (
+              <div className='cart-filled'>
+                <img src='./images/image-product-1.jpg' alt='' />
+                <div className='cart-product-info'>
+                  <div className='name-section'>
+                    <span className='product-name'>
+                      Fall Limited Edition Sneakers
+                    </span>
+                  </div>
+                  <div className='product-price'>
+                    <span className='price'>$125.00 x {count}</span>
+                    <span className='total'>${125.0 * count}.00</span>
+                  </div>
+                </div>
+                <FaTrashAlt
+                  className='remove-icon'
+                  onClick={() => dispatch(decrement())}
+                />
+              </div>
+            )}
+            {count > 0 ? <Button>Checkout</Button> : null}
           </Cart>
         </Flex>
         <Image

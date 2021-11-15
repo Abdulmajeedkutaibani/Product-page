@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { BsCart3 } from 'react-icons/bs';
 import { useDispatch, useSelector } from 'react-redux';
-import { decrement, increment } from '../Redux/Counter';
+import { decrement, increment, incrementByAmount } from '../Redux/Counter';
+import { closeCart, openCart } from '../Redux/Modal';
 import { Flex } from './Style/Flex.styled';
 import {
   AddToCart,
@@ -16,11 +17,16 @@ import {
 const Product = () => {
   const [mainImage, setMainImage] = useState('./images/image-product-1.jpg');
   const dispatch = useDispatch();
-  const count = useSelector((state) => state.counter.count);
+  const [purchaseNumber, setPurchaseNumber] = useState(0);
+
   return (
-    <ProductStyled>
+    <ProductStyled onClick={() => dispatch(closeCart())}>
       <ProductPreview direction='column' gap='34px'>
-        <ProductImage src={mainImage} width='100%' />
+        <ProductImage
+          src={mainImage}
+          width='100%'
+          style={{ cursor: 'default' }}
+        />
         <Flex>
           <ProductImage
             src='./images/image-product-1-thumbnail.jpg'
@@ -54,22 +60,30 @@ const Product = () => {
         </p>
         <Flex className='price-section' width='48%'>
           <span className='price'>$125.00</span>
-          <div>
+          <div className='discount-percentage'>
             <p>50%</p>
           </div>
         </Flex>
         <p className='old-price'>$250.00</p>
         <AddToCart>
           <Counter>
-            <span className='decrement' onClick={() => dispatch(decrement())}>
+            <span
+              className='decrement'
+              onClick={() =>
+                setPurchaseNumber(purchaseNumber <= 0 ? 0 : purchaseNumber - 1)
+              }
+            >
               -
             </span>
-            <span>{count}</span>
-            <span className='increment' onClick={() => dispatch(increment())}>
+            <span>{purchaseNumber >= 0 ? purchaseNumber : 0}</span>
+            <span
+              className='increment'
+              onClick={() => setPurchaseNumber(purchaseNumber + 1)}
+            >
               +
             </span>
           </Counter>
-          <Button>
+          <Button onClick={() => dispatch(incrementByAmount(purchaseNumber))}>
             <BsCart3 className='button-cart-icon' />
             Add to cart
           </Button>

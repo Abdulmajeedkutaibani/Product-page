@@ -7,6 +7,10 @@ export const HeaderStyled = styled.header`
 
   .cartComponent {
     position: relative;
+
+    svg {
+      cursor: pointer;
+    }
   }
 
   .header-cart-icon {
@@ -93,7 +97,7 @@ export const Cart = styled.div`
   background: white;
   z-index: 30;
   position: absolute;
-  width: 380px;
+  width: 360px;
   height: 280px;
   border-radius: 8px;
   top: 60px;
@@ -107,16 +111,27 @@ export const Cart = styled.div`
     display: flex;
     align-items: center;
     padding-left: 25px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 
     span {
       font-weight: 600;
     }
   }
-  .cart-product {
+  .cart-empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180px;
+    font-size: 18px;
+    font-weight: 700;
+    color: ${({ theme }) => theme.colors.subColor};
+  }
+  .cart-filled {
+    user-select: none;
     padding: 25px;
     display: flex;
     align-items: center;
-
     gap: 16px;
 
     img {
@@ -134,6 +149,10 @@ export const Cart = styled.div`
       color: lightgray;
       cursor: pointer;
       font-size: 19px;
+      transition: all 0.3s;
+      &:active {
+        transform: scale(0.5);
+      }
       &:hover {
         color: red;
       }
@@ -153,5 +172,6 @@ export const Cart = styled.div`
     box-shadow: none;
     margin-left: 25px;
     width: 312px;
+    user-select: none;
   }
 `;

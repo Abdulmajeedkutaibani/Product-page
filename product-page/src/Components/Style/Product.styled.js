@@ -41,8 +41,9 @@ export const ProductInfo = styled.div`
   }
   .price-section {
     margin-bottom: 18px;
+    width: 150px;
 
-    div {
+    .discount-percentage {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -72,6 +73,7 @@ export const ProductInfo = styled.div`
 
 export const ProductImage = styled.img`
   width: ${({ width }) => width};
+  max-width: 500px;
   border-radius: 12px;
   cursor: pointer;
   @media (max-width: ${({ theme }) => theme.mobile}) {
