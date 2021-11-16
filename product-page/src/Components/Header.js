@@ -12,8 +12,8 @@ import {
   CartCount,
   Cart,
 } from './Style/Header.style';
-// import { BsCart3 } from 'react-icons/bs';
-// import { FaTrashAlt } from 'react-icons/fa';
+import { BsCart3 } from 'react-icons/bs';
+import { FaTrashAlt } from 'react-icons/fa';
 import { Button } from './Style/Product.styled';
 import { BackgroundStyled } from './Style/Background.styled';
 import { decrement } from '../Redux/Counter';
@@ -54,13 +54,13 @@ const Header = () => {
       </Nav>
       <Flex>
         <Flex className='cartComponent'>
-          {/* <BsCart3
+          <BsCart3
             className='header-cart-icon'
             onClick={() => {
               dispatch(openCart());
               setShowBackground('block');
             }}
-          /> */}
+          />
           {count > 0 ? (
             <CartCount>
               <span>{count}</span>
@@ -88,10 +88,10 @@ const Header = () => {
                     <span className='total'>${125.0 * count}.00</span>
                   </div>
                 </div>
-                {/* <FaTrashAlt
+                <FaTrashAlt
                   className='remove-icon'
                   onClick={() => dispatch(decrement())}
-                /> */}
+                />
               </div>
             )}
             {count > 0 ? <Button>Checkout</Button> : null}
