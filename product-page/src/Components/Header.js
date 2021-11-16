@@ -88,10 +88,10 @@ const Header = () => {
                     <span className='total'>${125.0 * count}.00</span>
                   </div>
                 </div>
-                <FaTrashAlt
+                {/* <FaTrashAlt
                   className='remove-icon'
                   onClick={() => dispatch(decrement())}
-                />
+                /> */}
               </div>
             )}
             {count > 0 ? <Button>Checkout</Button> : null}
