@@ -12,8 +12,8 @@ import {
   CartCount,
   Cart,
 } from './Style/Header.style';
-import { BsCart3 } from 'react-icons/bs';
-import { FaTrashAlt } from 'react-icons/fa';
+// import { BsCart3 } from 'react-icons/bs';
+// import { FaTrashAlt } from 'react-icons/fa';
 import { Button } from './Style/Product.styled';
 import { BackgroundStyled } from './Style/Background.styled';
 import { decrement } from '../Redux/Counter';
