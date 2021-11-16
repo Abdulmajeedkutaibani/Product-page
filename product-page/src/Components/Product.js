@@ -84,7 +84,7 @@ const Product = () => {
             </span>
           </Counter>
           <Button onClick={() => dispatch(incrementByAmount(purchaseNumber))}>
-            <BsCart3 className='button-cart-icon' />
+            {/* <BsCart3 className='button-cart-icon' /> */}
             Add to cart
           </Button>
         </AddToCart>
