@@ -54,13 +54,13 @@ const Header = () => {
       </Nav>
       <Flex>
         <Flex className='cartComponent'>
-          <BsCart3
+          {/* <BsCart3
             className='header-cart-icon'
             onClick={() => {
               dispatch(openCart());
               setShowBackground('block');
             }}
-          />
+          /> */}
           {count > 0 ? (
             <CartCount>
               <span>{count}</span>
