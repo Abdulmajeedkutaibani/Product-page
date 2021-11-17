@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { BsCart3 } from 'react-icons/bs';
-import { useDispatch, useSelector } from 'react-redux';
-import { decrement, increment, incrementByAmount } from '../Redux/Counter';
-import { closeCart, openCart } from '../Redux/Modal';
+import { useDispatch } from 'react-redux';
+import { incrementByAmount } from '../Redux/Counter';
+import { closeCart } from '../Redux/Modal';
 import { Flex } from './Style/Flex.styled';
 import {
   AddToCart,

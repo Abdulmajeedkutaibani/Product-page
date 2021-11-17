@@ -9,7 +9,9 @@ export const ProductStyled = styled.div`
   @media (max-width: ${({ theme }) => theme.mobile}) {
     flex-direction: column;
     margin-top: 0;
+    margin-bottom: 50px;
     width: 100%;
+    gap: 10px;
   }
 
   .product-images {
@@ -29,6 +31,7 @@ export const ProductPreview = styled.div`
   justify-content: space-between;
   @media (max-width: ${({ theme }) => theme.mobile}) {
     width: 100%;
+    gap: 10px;
   }
 `;
 
@@ -38,7 +41,6 @@ export const ProductInfo = styled.div`
   flex-direction: column;
   @media (max-width: ${({ theme }) => theme.mobile}) {
     width: 90%;
-    padding-bottom: 100px;
   }
 
   .company {
@@ -189,6 +191,9 @@ export const Button = styled.button`
 
   &:active {
     transform: scale(0.75);
+    @media (max-width: ${({ theme }) => theme.mobile}) {
+      transform: scale(0.9);
+    }
   }
 
   .button-cart-icon {

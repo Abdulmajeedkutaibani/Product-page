@@ -17,22 +17,33 @@ import { FaTrashAlt } from 'react-icons/fa';
 import { Button } from './Style/Product.styled';
 import { BackgroundStyled } from './Style/Background.styled';
 import { decrement } from '../Redux/Counter';
+import { MenuButton } from './Style/Menu.styled';
+import { closeMenu, openMenu } from '../Redux/Menu';
+import { hideBackground, showBackground } from '../Redux/Background';
 
 const Header = () => {
-  const [showBackground, setShowBackground] = useState('none');
   const count = useSelector((state) => state.counter.count);
   const dispatch = useDispatch();
   const open = useSelector((state) => state.opener.open);
+  const background = useSelector((state) => state.background.backgroundDisplay);
   return (
     <HeaderStyled>
       <BackgroundStyled
         onClick={() => {
           dispatch(closeCart());
-          setShowBackground('none');
+          dispatch(hideBackground());
+          dispatch(closeMenu());
         }}
-        style={{ display: showBackground }}
+        style={{ display: background }}
       />
       <Nav>
+        <MenuButton
+          src='./images/icon-menu.svg'
+          onClick={() => {
+            dispatch(showBackground());
+            dispatch(openMenu());
+          }}
+        />
         <Logo src='./images/logo.svg' />
         <NavList>
           <NavListItem>
@@ -58,7 +69,7 @@ const Header = () => {
             className='header-cart-icon'
             onClick={() => {
               dispatch(openCart());
-              setShowBackground('block');
+              dispatch(showBackground());
             }}
           />
           {count > 0 ? (

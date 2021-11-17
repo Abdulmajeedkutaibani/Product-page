@@ -12,6 +12,7 @@ export const GlobalStyles = createGlobalStyle`
 body{
     margin: 0;
     font-family:'Kumbh Sans', sans-serif;
+
 }
 
 `;
