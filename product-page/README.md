@@ -4,7 +4,6 @@
 
 - [Overview](#overview)
   - [Website Navigation](#website-navigation)
-  - [Screenshot](#screenshot)
   - [Link](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
