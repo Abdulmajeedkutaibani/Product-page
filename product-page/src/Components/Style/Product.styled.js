@@ -16,8 +16,17 @@ export const ProductStyled = styled.div`
 
   .product-images {
     padding: 10px 10px;
+
     img {
       border-radius: 8px;
+
+      &:hover {
+        opacity: 0.5;
+      }
+      &:active {
+        transform: scale(0.9);
+        border: 4px solid ${({ theme }) => theme.colors.mainColor};
+      }
     }
   }
 `;

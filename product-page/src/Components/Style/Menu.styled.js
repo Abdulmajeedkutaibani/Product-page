@@ -7,7 +7,7 @@ export const MenuStyled = styled.div`
   z-index: 50;
   position: fixed;
   left: -100%;
-  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
   display: flex;
   flex-direction: column;
   padding: 30px;
