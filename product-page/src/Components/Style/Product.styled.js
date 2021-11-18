@@ -15,6 +15,7 @@ export const ProductStyled = styled.div`
   }
 
   .product-images {
+    padding: 10px 10px;
     img {
       border-radius: 8px;
     }
@@ -45,6 +46,7 @@ export const ProductInfo = styled.div`
   flex-direction: column;
   @media (max-width: ${({ theme }) => theme.mobile}) {
     width: 90%;
+    margin-top: 20px;
   }
 
   .company {
@@ -58,6 +60,9 @@ export const ProductInfo = styled.div`
   .title {
     margin-bottom: 50px;
     text-transform: capitalize;
+    @media (max-width: ${({ theme }) => theme.mobile}) {
+      margin-bottom: 20px;
+    }
   }
   .description {
     font-size: 16px;
