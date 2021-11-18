@@ -26,10 +26,6 @@ Users should be able to:
 - Add items to the cart
 - View the cart and remove items from it
 
-### Screenshot
-
-![](./images/desktop-design.jpg)
-
 ### Link
 
 - Live Site URL: [https://sneakers-product-page.netlify.app](https://sneakers-product-page.netlify.app/)
