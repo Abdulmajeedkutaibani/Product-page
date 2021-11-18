@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ProductStyled = styled.div`
   display: flex;
-  gap: 5rem;
+  gap: 50px;
   width: 90%;
   margin: 100px auto;
   align-items: center;
@@ -15,9 +15,8 @@ export const ProductStyled = styled.div`
   }
 
   .product-images {
-    padding: 0 5%;
     img {
-      border-radius: 12px;
+      border-radius: 8px;
     }
   }
 `;
@@ -26,9 +25,14 @@ export const ProductPreview = styled.div`
   display: flex;
   flex-direction: ${({ direction }) => direction};
   width: 50%;
+  min-width: 300px;
   align-items: center;
   gap: ${({ gap }) => gap};
   justify-content: space-between;
+
+  & > img {
+    width: 100%;
+  }
   @media (max-width: ${({ theme }) => theme.mobile}) {
     width: 100%;
     gap: 10px;
