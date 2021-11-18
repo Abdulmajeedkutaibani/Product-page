@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Flex } from './Style/Flex.styled';
 import { closeCart, openCart } from '../Redux/Modal';
@@ -9,9 +9,8 @@ import {
   NavList,
   NavListItem,
   Image,
-  CartCount,
-  Cart,
 } from './Style/Header.style';
+import { CartCount, Cart } from './Style/Cart.styled';
 import { BsCart3 } from 'react-icons/bs';
 import { FaTrashAlt } from 'react-icons/fa';
 import { Button } from './Style/Product.styled';
