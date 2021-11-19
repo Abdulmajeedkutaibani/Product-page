@@ -1,6 +1,5 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavList, NavListItem } from './Style/Header.style';
 import { MenuStyled } from './Style/Menu.styled';
 import { IoCloseSharp } from 'react-icons/io5';
 import { closeMenu } from '../Redux/Menu';

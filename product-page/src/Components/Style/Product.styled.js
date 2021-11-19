@@ -19,6 +19,8 @@ export const ProductStyled = styled.div`
 
     img {
       border-radius: 8px;
+      width: 20%;
+      height: 20%;
 
       &:hover {
         opacity: 0.5;
@@ -42,6 +44,7 @@ export const ProductPreview = styled.div`
 
   & > img {
     width: 100%;
+    height: 100%;
   }
   @media (max-width: ${({ theme }) => theme.mobile}) {
     width: 100%;

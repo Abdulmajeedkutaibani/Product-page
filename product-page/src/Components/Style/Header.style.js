@@ -45,10 +45,7 @@ export const Nav = styled.nav`
   }
 `;
 
-export const Logo = styled.img`
-  @media (max-width: ${({ theme }) => theme.mobile}) {
-  }
-`;
+export const Logo = styled.img``;
 
 export const NavList = styled.ul`
   display: flex;
@@ -66,6 +63,7 @@ export const NavListItem = styled.li`
   display: flex;
   align-items: center;
   justify-content: center;
+
   &:active {
     transform: scale(0.9);
   }
