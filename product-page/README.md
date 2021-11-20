@@ -13,7 +13,7 @@
 
 ## Overview
 
-I build this product page to practice my newely acquired knowledge of Redux toolkit and styled components.
+I build this product page to practice my knowledge of Redux toolkit and styled components.
 
 ### Website Navigation
 
