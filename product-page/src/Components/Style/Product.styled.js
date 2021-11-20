@@ -70,7 +70,7 @@ export const ProductInfo = styled.div`
     letter-spacing: 2px;
   }
   .title {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     text-transform: capitalize;
     @media (max-width: ${({ theme }) => theme.mobile}) {
       margin-bottom: 20px;

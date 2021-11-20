@@ -54,9 +54,9 @@ const Product = () => {
         <p className='company'>Sneaker company</p>
         <h1 className='title'>fall limited edition sneakers</h1>
         <p className='description'>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea numquam
-          facilis suscipit officiis at, veniam voluptates excepturi dicta
-          ratione quia!
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they’ll withstand everything
+          the weather can offer.
         </p>
         <Flex className='price-section' width='48%'>
           <span className='price'>$125.00</span>
